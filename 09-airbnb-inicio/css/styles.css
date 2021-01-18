@@ -1,0 +1,336 @@
+:root {
+    --fontPrimary: 'Lato', sans-serif;
+    --primary    : #da595e;
+    --obscure    : #484848;
+    --white      : #ffffff;
+}
+
+body {
+    font-family: var(--fontPrimary);
+}
+
+h1 {
+    font-size  : 2.6rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+/* Interfaz */
+
+.contenedor {
+    max-width: 1100px;
+    margin   : 0 auto;
+}
+
+
+.hero {
+    height          : 100vh;
+    background-image: url(../img/arriba.jpg);
+    background-size : cover;
+    display         : grid;
+    grid            : 1fr 2fr / none;
+}
+
+header {
+    display        : flex;
+    justify-content: space-between;
+    align-self     : start;
+    align-items    : center;
+    width          : 100%;
+    padding-top    : 1em;
+}
+
+.navegacion a {
+    color          : var(--white);
+    text-decoration: none;
+    margin-right   : 1rem;
+}
+
+.navegacion a:last-of-type {
+    margin-right: 0;
+}
+
+.contenido-hero {
+    display: grid;
+    grid   : max-content auto / 5% auto 5%;
+}
+
+.contenido-hero h1 {
+    grid-column: 2 / 3;
+    color      : var(--white);
+}
+
+.contenido-hero form {
+    grid-column: 2 / 3;
+    grid-row   : 2 / 3;
+    position   : relative;
+    display    : flex;
+    height     : 4rem;
+}
+
+form input[type="text"] {
+    flex               : 1;
+    border             : none;
+    border-radius      : 10px;
+    background-image   : url(../img/lupa.png);
+    background-repeat  : no-repeat;
+    background-position: calc(1% + 1rem) calc(1% + .8rem);
+    padding-left       : 5rem;
+    font-size          : 1.6em;
+}
+
+form input[type="submit"] {
+    position        : absolute;
+    right           : 1em;
+    top             : .45em;
+    padding         : .7em 2em;
+    border          : none;
+    border-radius   : 10px;
+    background-color: var(--primary);
+    color           : var(--white);
+    text-transform  : uppercase;
+    font-size       : 1.2em;
+    cursor          : pointer;
+}
+
+.contedino {
+    padding-left : 1em;
+    padding-right: 1em;
+    margin-left  : 1em;
+    margin-right : 1em;
+}
+
+.btn {
+    background-color  : var(--white);
+    display           : block;
+    padding           : 1em;
+    color             : var(--obscure);
+    text-decoration   : none;
+    font-weight       : 700;
+    border-radius     : 10px;
+    text-align        : center;
+    font-size         : 1.2em;
+    -webkit-box-shadow: 6px 7px 15px -3px rgba(117, 117, 117, 0.9);
+    -moz-box-shadow   : 6px 7px 15px -3px rgba(117, 117, 117, 0.9);
+    box-shadow        : 6px 7px 15px -3px rgba(117, 117, 117, 0.9);
+    transition        : all .4s ease-in-out;
+    border            : 1px solid var(--white);
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    color           : var(--white);
+}
+
+.btn-flotante {
+    position          : fixed;
+    bottom            : 1em;
+    right             : 1em;
+    background-color  : var(--white);
+    color             : var(--obscure);
+    border            : 1px solid var(--white);
+    padding           : .8em .8em;
+    text-decoration   : none;
+    -webkit-box-shadow: 6px 7px 15px -3px rgba(117, 117, 117, 0.9);
+    -moz-box-shadow   : 6px 7px 15px -3px rgba(117, 117, 117, 0.9);
+    box-shadow        : 6px 7px 15px -3px rgba(117, 117, 117, 0.9);
+    transition        : all .3s ease-in-out;
+    border-radius     : 10px;
+}
+
+.btn-flotante.activo,
+.btn-flotante:hover {
+    background-color: var(--primary);
+    color           : var(--white);
+}
+
+/* Contenido Principal */
+
+.contenedor-cards {
+    display      : grid;
+    grid         : none / repeat(auto-fit, minmax(250px, 1fr));
+    gap          : 1em;
+    text-align   : center;
+    padding-left : 1em;
+    padding-right: 1em;
+}
+
+.card img {
+    width        : 100%;
+    border-radius: 10px;
+}
+
+.info .categoria {
+    text-transform: uppercase;
+    font-size     : .9em;
+    font-weight   : 700;
+}
+
+.info .titulo {
+    font-size  : 1.6em;
+    font-weight: 900;
+    margin     : 0;
+}
+
+.info .precio {
+    color    : var(--obscure);
+    font-size: .9em;
+}
+
+/* Premium */
+
+.premium {
+    background-image           : url(../img/hospedaje-pro.jpg);
+    background-repeat          : no-repeat;
+    /* background-position     : center right; */
+    grid                       : none / unset;
+    /* grid-template-columns   : unset; */
+    height                     : 30em;
+}
+
+@media (min-width: 768px) {
+    .premium {
+        grid: none / auto 30%;
+    }
+
+    .premium .info {
+        grid-column: 2 / 3;
+    }
+}
+
+.premium .info {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    padding        : 1em;
+}
+
+.premium .info h3 {
+    text-align: center;
+    font-size : 2.2em;
+    color     : var(--white);
+}
+
+@media (min-width: 768px) {
+    .premium .info h3 {
+        text-align: right;
+        color     : var(--obscure);
+    }
+}
+
+/* Destubis populares */
+
+.destinos .contenedor-cards {
+    grid: none / repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.destinos .card {
+    position: relative;
+}
+
+.destinos .info {
+    position: absolute;
+    bottom  : 1em;
+    left    : 1em;
+}
+
+.destinos .info .titulo {
+    font-size: 1.8em;
+    color    : var(--white);
+}
+
+/* Footer */
+footer {
+    position          : fixed;
+    bottom            : -100%;
+    width             : 100%;
+    background-color  : var(--white);
+    -webkit-box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow   : 0px -5px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow        : 0px -5px 5px 0px rgba(0, 0, 0, 0.75);
+    transition        : all .2s ease-in;
+}
+
+footer.activo {
+    bottom: 0;
+}
+
+.nav-footer {
+    padding: 1em;
+}
+
+.nav-footer h3 {
+    font-size: 1.2em;
+}
+
+.nav-footer a {
+    display        : block;
+    margin-bottom  : .5em;
+    text-decoration: none;
+}
+
+.nav-footer a:last-of-type {
+    margin: 0;
+}
+
+
+/** Redes Socialaes**/
+
+.sociales ul {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: flex-start;
+    justify-content: flex-end;
+    justify-content: flex-end;
+    flex           : 1 0 auto;
+    list-style     : none;
+}
+
+.sociales ul li {
+    margin-right: 1rem;
+}
+
+.sociales ul li:last-of-type {
+    margin-right: 0;
+}
+
+.sociales ul li a {
+    text-decoration: none;
+}
+
+.sociales ul li a:before {
+    font-family: "Font Awesome 5 Brands";
+    color      : var(--obscuro);
+    font-size  : 1.8rem;
+}
+
+.sociales ul li a[href*='facebook.com']::before {
+    content: "\f39e";
+}
+
+.sociales ul li a[href*='twitter.com']::before {
+    content: "\f099";
+}
+
+.sociales ul li a[href*='youtube.com']::before {
+    content: "\f431";
+}
+
+.sociales ul li a[href*='instagram.com']::before {
+    content: "\f16d";
+}
+
+.sociales ul li a[href*='pinterest.com']::before {
+    content: "\f231 ";
+}
+
+.sociales ul li span {
+    display: none;
+}

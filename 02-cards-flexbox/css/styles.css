@@ -1,0 +1,85 @@
+body {
+    box-sizing      : border-box;
+    background-color: #f2f2f2;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin   : 0 auto;
+    padding  : 1rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h2 {
+    flex      : 0 1 100%;
+    text-align: center;
+    font-size : 1.8rem;
+}
+
+h3 {
+    font-family: "Libre Baskerville";
+    margin     : 0;
+    font-weight: bolder;
+}
+
+.contenido-principal {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 480px) {
+    .contenido-principal {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: space-between;
+    }
+
+    .entrada {
+        flex: 0 1 calc(50% - 1rem);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .entrada {
+        flex: 0 1 calc(33% - 1rem);
+    }
+}
+
+.entrada {
+    margin-bottom: 1rem;
+    border-radius: .4rem;
+}
+
+article,
+article img {
+    border-radius: .4rem;
+}
+
+
+.contenido {
+    border-radius   : .4rem;
+    text-transform  : uppercase;
+    background-color: white;
+    text-align      : center;
+    padding         : 1rem;
+}
+
+.contenido span {
+    color: #db008d;
+}
+
+.contenido h3 {
+    font-size  : .9rem;
+    line-height: 1.4rem;
+}
+
+.boton {
+    display         : block;
+    background-color: #008fd1;
+    color           : #fff;
+    padding         : .4rem 3rem;
+    border-radius   : .4rem;
+}

@@ -1,0 +1,58 @@
+@mixin btn($color) {
+    background-color: $color;
+    padding         : .8rem 1rem;
+    margin-top      : 1rem;
+    display         : block;
+    text-align      : center;
+    text-decoration : none;
+    color           : $blanco;
+}
+
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+
+@mixin background-img($img) {
+    background-image   : url($img);
+    background-repeat  : no-repeat;
+    background-position: center center;
+}
+
+@mixin gradient($c1, $c2) {
+    background: linear-gradient(to right, $c1 0%, $c2 100%);
+}
+
+@mixin celular() {
+    @media only screen and (min-width: #{$celular}) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media only screen and (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media only screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin menus() {
+    display       : flex;
+    flex-direction: column;
+    margin-bottom : 1rem;
+    flex          : 1;
+
+    @include desktop() {
+        flex: 0 1 calc(30%-1rem);
+    }
+
+    a {
+        color          : $negro;
+        text-decoration: none;
+        margin-bottom  : .5rem;
+    }
+}
